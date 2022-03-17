@@ -9,15 +9,15 @@ int main() {
 	vector <string> Authors;
 	do {
 		system("cls");
-		cout << "Âûáåðåòå ïóíêò ìåíþ :" << endl;
-		cout << "1. Äîáàâèòü êíèãó." << endl;
-		cout << "2. Óäàëèòü êíèãó." << endl;
-		cout << "3. Âûâåñòè èíôîðìàöèþ î êíèãå ïî ID" << endl;
-		cout << "4. Ïîèñê êíèãè è âûäà÷à åå ID" << endl;
-		cout << "5. Âûäà÷à êíèãè." << endl;
-		cout << "6. Âîçâðàò êíèãè." << endl;
-		cout << "7. Âûâîä èíôîðìàöèè î äîëæíèêàõ." << endl;
-		cout << "8. Âûõîä." << endl;
+		cout << "Выберете пункт меню :" << endl;
+		cout << "1. Добавить книгу." << endl;
+		cout << "2. Удалить книгу." << endl;
+		cout << "3. Вывести информацию о книге по ID" << endl;
+		cout << "4. Поиск книги и выдача ее ID" << endl;
+		cout << "5. Выдача книги." << endl;
+		cout << "6. Возврат книги." << endl;
+		cout << "7. Вывод информации о должниках." << endl;
+		cout << "8. Выход." << endl;
 		cout << ">";
 
 		cin >> Variant;
@@ -27,23 +27,23 @@ int main() {
 		switch (Variant)
 		{
 		case 1 :
-			cout << "Ââåäèòå íàçâàíèå êíèãè: \n";
+			cout << "Введите название книги: \n";
 			cin >> Title;
-			cout << "\nÂâåäèòå ãîä èçäàòåëüñòâà êíèãè:\n";
+			cout << "\nВведите год издательства книги:\n";
 			cin >> Year;
-			cout << "\nÂâåäèòå èçäàòåëüñòâî êíèãè:\n";
+			cout << "\nВведите издательство книги:\n";
 			cin >> Publisher;
-			cout << "\nÂâåäèòå êîëè÷åñòâî ñòðàíèö êíèãè:\n";
+			cout << "\nВведите количество страниц книги:\n";
 			cin >> Pages;
-			cout << "\nÂâåäèòå ID êíèãè:\n";
+			cout << "\nВведите ID книги:\n";
 			cin >> ID;
-			cout << "\nÂâåäèòå îáùåå êîëè÷åñòâî êíèã:\n";
+			cout << "\nВведите общее количество книг:\n";
 			cin >> Quantity;
-			cout << "\nÂâåäèòå êîëè÷åñòâî ñâîáîäíûõ êíèã:\n";
+			cout << "\nВведите количество свободных книг:\n";
 			cin >> Instances;
-			cout << "\nÂâåäèòå êîëè÷åñòâî àâòîðîâ êíèãè:\n";
+			cout << "\nВведите количество авторов книги:\n";
 			cin >> Number;
-			cout << "\nÂâåäèòå àâòîðîâ êíèãè:\n";
+			cout << "\nВведите авторов книги:\n";
 			for (int i = 1; i <= Number; i++) {
 				cin >> Name;
 				Authors.push_back(Name);
@@ -53,57 +53,57 @@ int main() {
 			Authors.clear();
 			break;
 		case 2 :
-			cout << "Ââåäèòå íàçâàíèå óäàëÿåìîé êíèãè." << endl;
+			cout << "Введите название удаляемой книги." << endl;
 			cin >> Title;
 			cout << endl;
 			data.DeleteBook(Title);
 			break;
 		case 3 :
-			cout << "Ââåäèòå ID êíèãè: " << endl;
+			cout << "Введите ID книги: " << endl;
 			cin >> ID;
 			cout << endl;
 			data.TakenBooksInfo(ID);
 			break;
 		case 4 :
-			cout << "Ââåäèòå íàçâàíèå êíèãè è àâòîðà." << endl;
-			cout << "Ââåäèòå íàçâàíèå: ";
+			cout << "Введите название книги и автора." << endl;
+			cout << "Введите название: ";
 			cin >> Title;
-			cout << endl << "Ââåäèòå èìÿ àâòîðà: ";
+			cout << endl << "Введите имя автора: ";
 			cin >> Name;
 			cout << endl;
 			data.Searching(Title, Name);
 			break;
 		case 5 :
-			cout << "Ââåäèòå èíôîðìàöèþ î âûäàâàåìîé êíèãå è êëèåíòå." << endl;
-			cout << "Ââåäèòå íàçâàíèå: ";
+			cout << "Введите информацию о выдаваемой книге и клиенте." << endl;
+			cout << "Введите название: ";
 			cin >> Title;
-			cout << endl << "Ââåäèòå èìÿ: ";
+			cout << endl << "Введите имя: ";
 			cin >> Name;
-			cout << endl << "Ââåäèòå äåíü âûäà÷è: ";
+			cout << endl << "Введите день выдачи: ";
 			cin >> Day;
-			cout << endl << "Ââåäèòå ìåñÿö âûäà÷è: ";
+			cout << endl << "Введите месяц выдачи: ";
 			cin >> Month;
-			cout << endl << "Ââåäèòå ãîä âûäà÷è: ";
+			cout << endl << "Введите год выдачи: ";
 			cin >> Year;
 			cout << endl;
 			data.IssuanceOfBook(Title, Name, Day, Month, Year);
 			break;
 		case 6 :
-			cout << "Ââåäèòå äàííûå î âîçâðàùàåìîé êíèãå." << endl;
-			cout << "Ââåäèòå íàçâàíèå êíèãè: ";
+			cout << "Введите данные о возвращаемой книге." << endl;
+			cout << "Введите название книги: ";
 			cin >> Title;
-			cout << endl << "Ââåäèòå èìÿ âîçâðàùàþùåãî êíèãó: ";
+			cout << endl << "Введите имя возвращающего книгу: ";
 			cin >> Name;
 			cout << endl;
 			data.ReturnOfBook (Title, Name);
 			break;
 		case 7 :
-			cout << "Ââåäèòå ñåãîäíÿøíåå ÷èñëî." << endl;
-			cout << "Ââåäèòå äàòó: ";
+			cout << "Введите сегодняшнее число." << endl;
+			cout << "Введите дату: ";
 			cin >> Day;
-			cout << endl << "Ââåäèòå ìåñÿö: ";
+			cout << endl << "Введите месяц: ";
 			cin >> Month;
-			cout << endl << "Ââåäèòå ãîä: ";
+			cout << endl << "Введите год: ";
 			cin >> Year;
 			cout << endl;
 			data.DebtorsInfo(Day, Month, Year);
