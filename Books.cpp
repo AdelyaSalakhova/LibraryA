@@ -12,10 +12,10 @@ void ACTIONS_WITH_BOOKS::DeleteBook(string BookName) {
         if (Info[i].Title == BookName) {
             t = 1;
             Info.erase(Info.begin() + i);
-            cout << "Êíèãà " << BookName << " óäàëåíà." << endl;
+            cout << "ÐšÐ½Ð¸Ð³Ð° " << BookName << " ÑƒÐ´Ð°Ð»ÐµÐ½Ð°." << endl;
         }
     }
-    if (t == 0) { cout << "Íåò çàïðàøèâàåìîé êíèãè." << endl; }
+    if (t == 0) { cout << "ÐÐµÑ‚ Ð·Ð°Ð¿Ñ€Ð°ÑˆÐ¸Ð²Ð°ÐµÐ¼Ð¾Ð¹ ÐºÐ½Ð¸Ð³Ð¸." << endl; }
 }
 
 void ACTIONS_WITH_BOOKS::TakenBooksInfo (unsigned int myID) {
@@ -23,25 +23,25 @@ void ACTIONS_WITH_BOOKS::TakenBooksInfo (unsigned int myID) {
     for (int i = 0; i < Info.size(); i++) {
         if (Info[i].ID == myID) {
             t = 1;
-            cout << "Èíôîðìàöèÿ ïî êíèãå ñ ID : " << myID << endl;
-            cout << "Íàçâàíèå : " << Info[i].Title << endl;
-            cout << "Ãîä âûõîäà : " << Info[i].Year << endl;
-            cout << "Èçäàòåëüñòâî : " << Info[i].Publisher << endl;
-            cout << "Êîëè÷åñòâî ñòðàíèö : " << Info[i].NumberOfPages << endl;
-            cout << "Ãîä âûõîäà : " << Info[i].Year << endl;
-            cout << "Àâòîðû : " << endl;
+            cout << "Ð˜Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ Ð¿Ð¾ ÐºÐ½Ð¸Ð³Ðµ Ñ ID : " << myID << endl;
+            cout << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ : " << Info[i].Title << endl;
+            cout << "Ð“Ð¾Ð´ Ð²Ñ‹Ñ…Ð¾Ð´Ð° : " << Info[i].Year << endl;
+            cout << "Ð˜Ð·Ð´Ð°Ñ‚ÐµÐ»ÑŒÑÑ‚Ð²Ð¾ : " << Info[i].Publisher << endl;
+            cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ† : " << Info[i].NumberOfPages << endl;
+            cout << "Ð“Ð¾Ð´ Ð²Ñ‹Ñ…Ð¾Ð´Ð° : " << Info[i].Year << endl;
+            cout << "ÐÐ²Ñ‚Ð¾Ñ€Ñ‹ : " << endl;
             for (int k = 0; k < Info[i].Authors.size(); k++) {
                 cout << "  " << k + 1 << ". " << Info[i].Authors[k] << endl;
             }
-            cout << "Êîëè÷åñòâî ýêçåìïëÿðîâ : " << Info[i].Quantity << endl;
-            cout << "Êîëè÷åñòâî ýêçåìïëÿðîâ â íàëè÷èè : " << Info[i].Instances << endl;
-            cout << "Èíôîðìàöèÿ ïî âçÿâøèì êíèãó : " << endl;
+            cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐºÐ·ÐµÐ¼Ð¿Ð»ÑÑ€Ð¾Ð² : " << Info[i].Quantity << endl;
+            cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐºÐ·ÐµÐ¼Ð¿Ð»ÑÑ€Ð¾Ð² Ð² Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ð¸ : " << Info[i].Instances << endl;
+            cout << "Ð˜Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ Ð¿Ð¾ Ð²Ð·ÑÐ²ÑˆÐ¸Ð¼ ÐºÐ½Ð¸Ð³Ñƒ : " << endl;
             for (int j = 0; j < Info[i].Piked.size(); j++) {
                 cout << "  " << j + 1 << ". " << Info[i].Piked[j].ReadersName << "  " << Info[i].Piked[j].Day << "." << Info[i].Piked[j].Month << "." << Info[i].Piked[j].year << endl;
             }
         }
     }
-    if (t == 0) { cout << "Íåò çàïðàøèâàåìîé êíèãè." << endl; }
+    if (t == 0) { cout << "ÐÐµÑ‚ Ð·Ð°Ð¿Ñ€Ð°ÑˆÐ¸Ð²Ð°ÐµÐ¼Ð¾Ð¹ ÐºÐ½Ð¸Ð³Ð¸." << endl; }
 }
 
 void ACTIONS_WITH_BOOKS::Searching (string myTitle, string myAuthors) {
@@ -58,7 +58,7 @@ void ACTIONS_WITH_BOOKS::Searching (string myTitle, string myAuthors) {
             cout << "ID : " << Info[i].ID << endl;
         }
     }
-    if (t == 0) { cout << "Íåò çàïðàøèâàåìîé êíèãè." << endl; }
+    if (t == 0) { cout << "ÐÐµÑ‚ Ð·Ð°Ð¿Ñ€Ð°ÑˆÐ¸Ð²Ð°ÐµÐ¼Ð¾Ð¹ ÐºÐ½Ð¸Ð³Ð¸." << endl; }
 }
 
 void ACTIONS_WITH_BOOKS::IssuanceOfBook (string IssuanseTitle, string myName, unsigned int myDay, unsigned int myMonth, unsigned int myYear) {
@@ -74,7 +74,7 @@ void ACTIONS_WITH_BOOKS::IssuanceOfBook (string IssuanseTitle, string myName, un
                 Info[i].Piked.push_back(New);
             }
             else {
-                cout << "Âûáðàííîé êíèãè íåò â íàëè÷èè.";
+                cout << "Ð’Ñ‹Ð±Ñ€Ð°Ð½Ð½Ð¾Ð¹ ÐºÐ½Ð¸Ð³Ð¸ Ð½ÐµÑ‚ Ð² Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ð¸.";
             }
         }
     }
@@ -96,7 +96,7 @@ void ACTIONS_WITH_BOOKS::ReturnOfBook (string ReturnTitle, string myName) {
 
 void ACTIONS_WITH_BOOKS::DebtorsInfo(unsigned int TodDay, unsigned int TodMonth, unsigned int TodYear) {
     for (int i = 0; i < Info.size(); i++) {
-        cout << "Äîëæíèêè ïî êíèãå :" << Info[i].Title << endl;
+        cout << "Ð”Ð¾Ð»Ð¶Ð½Ð¸ÐºÐ¸ Ð¿Ð¾ ÐºÐ½Ð¸Ð³Ðµ :" << Info[i].Title << endl;
         for (int j = 0; j < Info[i].Piked.size(); j++) {
             if (TodYear - Info[i].Piked[j].year >= 2) {
                 cout << j + 1 << ". " << Info[i].Piked[j].ReadersName << endl ;
